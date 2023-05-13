@@ -16,7 +16,7 @@
     运行成功输出的Log信息
 
     ```shell
-        qemu-system-aarch64 -nographic -m 1G -cpu cortex-a72 -machine type=virt,virtualization=on,iommu=smmuv3 -kernel target/aarch64/release/hypervisor.bin -smp 2 -device loader,addr=0x4001000,file=../bin/arceos-httpserver-single.bin,force-raw=on -device loader,addr=0x4101000,file=../bin/arceos-shell.bin,force-raw=on -device loader,addr=0x4201000,file=../bin/arceos-parallel-dual.bin,force-raw=on -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555 -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=../bin/disk.img
+    qemu-system-aarch64 -nographic -m 1G -cpu cortex-a72 -machine type=virt,virtualization=on,iommu=smmuv3 -kernel target/aarch64/release/hypervisor.bin -smp 2 -device loader,addr=0x4001000,file=../bin/arceos-httpserver-single.bin,force-raw=on -device loader,addr=0x4101000,file=../bin/arceos-shell.bin,force-raw=on -device loader,addr=0x4201000,file=../bin/arceos-parallel-dual.bin,force-raw=on -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555 -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=../bin/disk.img
 
 
         RRRRRR  VV     VV MM    MM
@@ -27,8 +27,8 @@
         ___    ____    ___    ___
         |__ \  / __ \  |__ \  |__ \
         __/ / / / / /  __/ /  __/ /
-    / __/ / /_/ /  / __/  / __/
-    /____/ \____/  /____/ /____/
+       / __/ / /_/ /  / __/  / __/
+      /____/ \____/  /____/ /____/
 
     primary cpu id: 0.
     boot stack: 0x40099000, boot stack top: 0x400a9000
@@ -58,10 +58,10 @@
     [  0.264429 INFO  rvm::arch::aarch64::vcpu:52] [RVM] created ArmVcpu
     Running guest...
 
-        d8888                            .d88888b.   .d8888b.
-        d88888                           d88P" "Y88b d88P  Y88b
-        d88P888                           888     888 Y88b.
-        d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+    d8888                            .d88888b.   .d8888b.
+    d88888                           d88P" "Y88b d88P  Y88b
+    d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
     d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
     d88P   888 888     888      88888888 888     888       "888
     d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
